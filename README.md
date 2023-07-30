@@ -1,4 +1,4 @@
-# Statistical Computng
+# Statistical Computing
 1. Introduction
 2. Data Structure in R
 3. Charts
