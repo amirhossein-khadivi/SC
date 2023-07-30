@@ -10,6 +10,6 @@
 9. Time Series
 
 NoteBook : 
-        Statistical Computing
+        Statistical Computing with R
         1.Mohammad moradi
         2.Abdollah Jalilian
