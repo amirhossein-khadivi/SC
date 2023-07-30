@@ -1,25 +1,6 @@
 
 <html>
 
-<style>
-p   {align-text: center; font-family: "XB Niloofar"}
-</style>
-
-<body>
-
-</body>
-
-</html>
-
-<html>
-
-<body>
-
-<style>
-h2    {background-color:#001A80A6 ; text-align: center ; color:white}
-h3    {background-color:#001A80A6 ; text-align: center ; color : white ; font-size:135%}
-p     {direction: rtl; font-family: "XB Niloofar"}
-</style>
 
 <h2 style={font-family: "XB Niloofar">
 Statistical Computing
