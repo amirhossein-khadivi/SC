@@ -22,12 +22,40 @@ p     {direction: rtl; font-family: "XB Niloofar"}
 </style>
 
 <h2 style={font-family: "XB Niloofar">
-Statistical Calculations
+Statistical Computing
 </h2>
+
+<style>
+a:link {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color:black ;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
 
 <h3 style={font-family: "XB Niloofar">
 Author <br>
-Amirhossein Khadivi <br> <br>
+Amirhossein Khadivi <br>
+<a href='https://github.com/amirhossein-khadivi/SC/tree/master/1'title='GitHub'>Source Codes</a>
+<br><br>
 Supervisor <br>
 Dr. Mohammad Kazemi <br> <br>
 Department of Statistics, University of Guilan
@@ -42,7 +70,7 @@ Department of Statistics, University of Guilan
 
 ``` r
 attach(airquality)
-plot(Temp,Ozone)
+plot(Temp, Ozone)
 ```
 
 ![](SC3_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
@@ -58,11 +86,11 @@ detach(airquality)
 چگالی داده ها را به هیستوگرام اضافه می کنیم.
 
 ``` r
-gammaa <- rgamma(1000,3,5)
-x <- seq(0,3,0.01)
-fx <- dgamma(x,3,5)
-hist(gammaa,freq = F,ylim = c(0,max(fx)))
-lines(x,fx,col='red')
+gammaa <- rgamma(1000, 3, 5)
+x <- seq(0, 3, 0.01)
+fx <- dgamma(x, 3, 5)
+hist(gammaa, freq = F, ylim = c(0, max(fx)))
+lines(x, fx, col = 'red')
 ```
 
 ![](SC3_files/figure-gfm/unnamed-chunk-2-1.png)<!-- --> <br> <br>
@@ -71,12 +99,12 @@ lines(x,fx,col='red')
 و نیمسازهای اول و سوم صفحه را به آن اضافه می کنیم.
 
 ``` r
-theta <- seq(-1,1,0.01)
+theta <- seq(-1, 1, 0.01)
 k <- 3
-r <- cos(k*theta)
-plot(r,theta,type = 'l')
+r <- cos(k * theta)
+plot(r, theta, type = 'l')
 y <- r
-lines(r,y,col = 'blue')
+lines(r, y, col = 'blue')
 ```
 
 ![](SC3_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
@@ -88,7 +116,7 @@ lines(r,y,col = 'blue')
 
 ``` r
 attach(sleep)
-boxplot(extra~group , data = sleep , horizontal = T)
+boxplot(extra ~ group , data = sleep , horizontal = T)
 ```
 
 ![](SC3_files/figure-gfm/unnamed-chunk-4-1.png)<!-- --> <br> همانطور که
@@ -102,7 +130,10 @@ boxplot(extra~group , data = sleep , horizontal = T)
 
 ``` r
 y <- table(group)
-plot(y,lwd = 100,col = 'blue',xlim=c(0,3))
+plot(y,
+     lwd = 100,
+     col = 'blue',
+     xlim = c(0, 3))
 ```
 
 ![](SC3_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->

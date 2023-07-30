@@ -22,12 +22,40 @@ p     {direction: rtl; font-family: "XB Niloofar"}
 </style>
 
 <h2 style={font-family: "XB Niloofar">
-Statistical Calculations
+Statistical Computing
 </h2>
+
+<style>
+a:link {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color:black ;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
 
 <h3 style={font-family: "XB Niloofar">
 Author <br>
-Amirhossein Khadivi <br> <br>
+Amirhossein Khadivi <br>
+<a href='https://github.com/amirhossein-khadivi/SC/tree/master/1'title='GitHub'>Source Codes</a>
+<br><br>
 Supervisor <br>
 Dr. Mohammad Kazemi <br> <br>
 Department of Statistics, University of Guilan
@@ -85,7 +113,7 @@ mtcars
 این داده ها برازش میدهیم.
 
 ``` r
-fit <- lm(mpg ~ .,data = mtcars)
+fit <- lm(mpg ~ ., data = mtcars)
 summary(fit)
 ```
 
@@ -167,7 +195,7 @@ cyl , disp , qsec در مدل در سطح 0.05 تایید می شود. <br> <br>
 فرض های بنیادی مدل رسم می کنیم.
 
 ``` r
-par(mfrow = c(2,2))
+par(mfrow = c(2, 2))
 plot(fit)
 ```
 
@@ -194,7 +222,8 @@ plot(fit)
 شده حذف شوند مشخص کنیم.
 
 ``` r
-step(lm(mpg ~ 1 , data = mtcars),scope = . ~cyl+disp+hp+drat+wt+qsec+vs+am+carb)
+step(lm(mpg ~ 1 , data = mtcars),
+     scope = . ~ cyl + disp + hp + drat + wt + qsec + vs + am + carb)
 ```
 
     ## Start:  AIC=115.94
@@ -280,20 +309,20 @@ step(lm(mpg ~ 1 , data = mtcars),scope = . ~cyl+disp+hp+drat+wt+qsec+vs+am+carb)
 محاسبه کنیم.
 
 ``` r
-cp <- function(n,SSE,p,sigmaa){
-  cp <- (1/n)*(SSE+(2*p*sigmaa))
+cp <- function(n, SSE, p, sigmaa) {
+  cp <- (1 / n) * (SSE + (2 * p * sigmaa))
   print(cp)
 }
 ```
 
 ``` r
-p <- length(fit$coefficients)-1
+p <- length(fit$coefficients) - 1
 n <- length(mtcars$mpg)
 a <- anova(fit)
-b<- a$`Sum Sq`
+b <- a$`Sum Sq`
 sse <- b[11]
 sigmma <- 2.65
-cp(n,sse,p,sigmma)
+cp(n, sse, p, sigmma)
 ```
 
     ## [1] 6.265451

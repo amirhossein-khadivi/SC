@@ -22,12 +22,40 @@ p     {direction: rtl; font-family: "XB Niloofar"}
 </style>
 
 <h2 style={font-family: "XB Niloofar">
-Statistical Calculations
+Statistical Computing
 </h2>
+
+<style>
+a:link {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color:black ;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
 
 <h3 style={font-family: "XB Niloofar">
 Author <br>
-Amirhossein Khadivi <br> <br>
+Amirhossein Khadivi <br>
+<a href='https://github.com/amirhossein-khadivi/SC/tree/master/1'title='GitHub'>Source Codes</a>
+<br><br>
 Supervisor <br>
 Dr. Mohammad Kazemi <br> <br>
 Department of Statistics, University of Guilan
@@ -44,10 +72,36 @@ Department of Statistics, University of Guilan
 0.05 بررسی کنیم.
 
 ``` r
-x <- c(5,25,10,1,3,5,12,14,40,12,32,8,4,47,20,14,18,16,10,1,22,8,5,23,9)
+x <-
+  c(5,
+    25,
+    10,
+    1,
+    3,
+    5,
+    12,
+    14,
+    40,
+    12,
+    32,
+    8,
+    4,
+    47,
+    20,
+    14,
+    18,
+    16,
+    10,
+    1,
+    22,
+    8,
+    5,
+    23,
+    9)
 
 library(nortest)
-qqnorm(x) ; qqline(x)
+qqnorm(x)
+qqline(x)
 ```
 
 ![](SC5_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
@@ -63,14 +117,14 @@ shapiro.test(x)
     ## W = 0.88521, p-value = 0.008866
 
 ``` r
-ks.test(x,'pnorm',mean=mean(x),sd=sd(x))
+ks.test(x, 'pnorm', mean = mean(x), sd = sd(x))
 ```
 
-    ## Warning in ks.test(x, "pnorm", mean = mean(x), sd = sd(x)): ties should not be
-    ## present for the Kolmogorov-Smirnov test
+    ## Warning in ks.test.default(x, "pnorm", mean = mean(x), sd = sd(x)): ties should
+    ## not be present for the Kolmogorov-Smirnov test
 
     ## 
-    ##  One-sample Kolmogorov-Smirnov test
+    ##  Asymptotic one-sample Kolmogorov-Smirnov test
     ## 
     ## data:  x
     ## D = 0.15892, p-value = 0.5529
@@ -113,7 +167,7 @@ ad.test(x)
 روزهای مرخصی کارمندان 12 روز هست یا نه را در سطح 0.05 بررسی کنیم.
 
 ``` r
-wilcox.test(x,mu = 12)
+wilcox.test(x, mu = 12)
 ```
 
     ## Warning in wilcox.test.default(x, mu = 12): cannot compute exact p-value with
@@ -130,7 +184,7 @@ wilcox.test(x,mu = 12)
     ## alternative hypothesis: true location is not equal to 12
 
 ``` r
-wilcox.test(x,mu = 12,exact = F)
+wilcox.test(x, mu = 12, exact = F)
 ```
 
     ## 
@@ -160,7 +214,7 @@ x1 <- 29 # two boys
 x2 <- 36 # two girls
 x3 <- 33 # one boy & one girl
 
-prop.test(c(x1,x2,x3),c(n,n,n),p=c(0.25,0.25,0.5))
+prop.test(c(x1, x2, x3), c(n, n, n), p = c(0.25, 0.25, 0.5))
 ```
 
     ## 
@@ -186,8 +240,8 @@ p ها نیز می توان این نتیجه را به دست آورد. <br> <b
 بررسی کنیم.
 
 ``` r
-x1 <- c(0.43,0.266,0.567,0.531,0.707,0.716,0.651,0.589,0.469,0.723)
-x2 <- c(0.415,0.238,0.39,0.41,0.605,0.609,0.632,0.523,0.411,0.612)
+x1 <- c(0.43, 0.266, 0.567, 0.531, 0.707, 0.716, 0.651, 0.589, 0.469, 0.723)
+x2 <- c(0.415, 0.238, 0.39, 0.41, 0.605, 0.609, 0.632, 0.523, 0.411, 0.612)
 
 shapiro.test(x1)
 ```
@@ -209,19 +263,21 @@ shapiro.test(x2)
     ## W = 0.88271, p-value = 0.1402
 
 ``` r
-qqnorm(x1) ; qqline(x1)
+qqnorm(x1)
+qqline(x1)
 ```
 
 ![](SC5_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ``` r
-qqnorm(x2) ; qqline(x2)
+qqnorm(x2)
+qqline(x2)
 ```
 
 ![](SC5_files/figure-gfm/unnamed-chunk-4-2.png)<!-- -->
 
 ``` r
-t.test(x1,x2,paired = T)
+t.test(x1, x2, paired = T)
 ```
 
     ## 
@@ -229,12 +285,12 @@ t.test(x1,x2,paired = T)
     ## 
     ## data:  x1 and x2
     ## t = 4.8638, df = 9, p-value = 0.0008911
-    ## alternative hypothesis: true difference in means is not equal to 0
+    ## alternative hypothesis: true mean difference is not equal to 0
     ## 95 percent confidence interval:
     ##  0.043006 0.117794
     ## sample estimates:
-    ## mean of the differences 
-    ##                  0.0804
+    ## mean difference 
+    ##          0.0804
 
 <br> ابتدا فرض نرمال بودن داده ها را بررسی میکنیم. <br> با توجه به
 نمودار احتمال نرمال ها نمیتوانیم درست تصمیم بگیریم و به همین دلیل
@@ -251,9 +307,9 @@ t.test(x1,x2,paired = T)
 همگنی واریانس ها برای مصرف سوخت این خودروها را بررسی کنیم.
 
 ``` r
-x1 <- mtcars$mpg[mtcars$gear==3]
-x2 <- mtcars$mpg[mtcars$gear==4]
-x3 <- mtcars$mpg[mtcars$gear==5]
+x1 <- mtcars$mpg[mtcars$gear == 3]
+x2 <- mtcars$mpg[mtcars$gear == 4]
+x3 <- mtcars$mpg[mtcars$gear == 5]
 
 shapiro.test(x1)
 ```
@@ -285,16 +341,16 @@ shapiro.test(x3)
     ## W = 0.90897, p-value = 0.4614
 
 ``` r
-varr <- bartlett.test(mpg~gear , data = mtcars)
+varr <- bartlett.test(mpg ~ gear , data = mtcars)
 vaarrr <- varr$p.value
 
-if(vaarrr > 0.05){
+if (vaarrr > 0.05) {
   print('var.equal = T')
-  one <- oneway.test(mpg~gear , data = mtcars , var.equal =  T)
+  one <- oneway.test(mpg ~ gear , data = mtcars , var.equal =  T)
   print(one)
-}else{
+} else{
   print('var.equal = F')
-  one<- oneway.test(mpg~gear , data = mtcars , var.equal = F)
+  one <- oneway.test(mpg ~ gear , data = mtcars , var.equal = F)
   print(one)
 }
 ```
@@ -307,8 +363,8 @@ if(vaarrr > 0.05){
     ## F = 10.901, num df = 2, denom df = 29, p-value = 0.0002948
 
 ``` r
-if(one$p.value < 0.05)
-pairwise.t.test(mtcars$mpg , mtcars$gear)
+if (one$p.value < 0.05)
+  pairwise.t.test(mtcars$mpg , mtcars$gear)
 ```
 
     ## 

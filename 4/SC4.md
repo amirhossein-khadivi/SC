@@ -22,12 +22,40 @@ p     {direction: rtl; font-family: "XB Niloofar"}
 </style>
 
 <h2 style={font-family: "XB Niloofar">
-Statistical Calculations
+Statistical Computing
 </h2>
+
+<style>
+a:link {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color:black ;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #dcc896;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
 
 <h3 style={font-family: "XB Niloofar">
 Author <br>
-Amirhossein Khadivi <br> <br>
+Amirhossein Khadivi <br>
+<a href='https://github.com/amirhossein-khadivi/SC/tree/master/1'title='GitHub'>Source Codes</a>
+<br><br>
 Supervisor <br>
 Dr. Mohammad Kazemi <br> <br>
 Department of Statistics, University of Guilan
@@ -40,12 +68,13 @@ Department of Statistics, University of Guilan
 (n\!)/(sqrt(2*pi*n)\*(n/exp)^n) <br> را برگرداند.
 
 ``` r
-f <- function(n){
-  if(n<=0){
+f <- function(n) {
+  if (n <= 0) {
     stop('n bayad intiger bashd.')
-  }else{
-  fn <- (factorial(n))/((sqrt(2*pi*n))*((n/exp(1))^n))
-  fn}
+  } else{
+    fn <- (factorial(n)) / ((sqrt(2 * pi * n)) * ((n / exp(1)) ^ n))
+    fn
+  }
 }
 
 # Example
@@ -61,19 +90,21 @@ f(2)
 در قالب یک بردار برگرداند.
 
 ``` r
-f <- function(x){
-  if(is.matrix(x)==F){
+f <- function(x) {
+  if (is.matrix(x) == F) {
     print('sakhtare dadeha bayad matrix bashand.')
   }
-  if(ncol(x) != 8){
+  if (ncol(x) != 8) {
     print('tedade sotunhaye matrix bayad 8 bashad.')
-  }else{
+  } else{
     y <- c()
-    for(i in 1:ncol(x)){
-      v <- x[,i]
-      d <- ((1/length(v))*sum((v - mean(v))^3))/((1/(length(v)-1))*sum((v - mean(v))^2))^(3/2)
+    for (i in 1:ncol(x)) {
+      v <- x[, i]
+      d <-
+        ((1 / length(v)) * sum((v - mean(v)) ^ 3)) / ((1 / (length(v) - 1)) * sum((v - mean(v)) ^
+                                                                                    2)) ^ (3 / 2)
       y[i] <- d
-    
+      
     }
     print(y)
   }
@@ -89,21 +120,22 @@ f <- function(x){
 ، این مطلب را به اطلاع کاربر برساند.
 
 ``` r
-f <- function(x){
-  if(is.matrix(x) == F){
+f <- function(x) {
+  if (is.matrix(x) == F) {
     stop('sakhtare dadeha bayad matrix bashad.')
-  }else{
-    for(i in 1:ncol(x)){
-      for(j in 1:nrow(x)){
-        if(x[i,j] < 0 ){
-          print(c(i,j))
+  } else{
+    for (i in 1:ncol(x)) {
+      for (j in 1:nrow(x)) {
+        if (x[i, j] < 0) {
+          print(c(i, j))
+        }
+        s <- 0
+        s <- s + sign(x[i, j])
       }
-      s <- 0
-      s <- s + sign(x[i,j])
-      }
-  }}
-   if(s <- length(x)){
-        print('dadeh manfi vojud nadarad.')
+    }
+  }
+  if (s <- length(x)) {
+    print('dadeh manfi vojud nadarad.')
   }
 }
 ```
