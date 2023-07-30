@@ -1,61 +1,12 @@
 
 <html>
-
-<style>
-  
-p   {align-text: center; font-family: "XB Niloofar"}
-</style>
-
-<body>
-
-</body>
-
-</html>
-
-<html>
-
-<body>
-
-<style>
-h2    {background-color:#001A80A6 ; text-align: center ; color:white}
-h3    {background-color:#001A80A6 ; text-align: center ; color : white ; font-size:135%}
-p     {direction: rtl; font-family: "XB Niloofar"}
-</style>
-
 <h2 style={font-family: "XB Niloofar">
 Statistical Computing
 </h2>
-
-<style>
-a:link {
-  color: #dcc896;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #dcc896;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color:black ;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-a:active {
-  color: #dcc896;
-  background-color: transparent;
-  text-decoration: underline;
-}
-</style>
-
 <h3 style={font-family: "XB Niloofar">
 Author <br>
 Amirhossein Khadivi <br>
-<a href='https://github.com/amirhossein-khadivi/SC/tree/master/1'title='GitHub'>Source Codes</a>
+<a href='https://github.com/amirhossein-khadivi/SC/tree/master'title='GitHub'>Source Codes</a>
 <br><br>
 Supervisor <br>
 Dr. Mohammad Kazemi <br> <br>
